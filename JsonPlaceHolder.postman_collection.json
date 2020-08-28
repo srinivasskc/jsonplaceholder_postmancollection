@@ -1,0 +1,698 @@
+{
+	"info": {
+		"_postman_id": "67fb51e3-287b-4ad2-a12e-749a9c82114d",
+		"name": "JsonPlaceHolder",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "No Auth",
+			"item": [
+				{
+					"name": "JPH - Users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "645f4216-296c-4538-b0ef-93480ef57a7e",
+								"exec": [
+									"let jsonData = pm.response.json();\r",
+									"console.log(jsonData)\r",
+									"//console.log(jsonData[0].name);\r",
+									"//console.log(jsonData[0].address.street);\r",
+									"console.log(typeof jsonData[0].address.geo.lat);\r",
+									"console.log(typeof jsonData[0].address.geo);\r",
+									"\r",
+									"\r",
+									"pm.test(\"Expected Leanne Graham as Name for ID: 1  \", function () {\r",
+									"    pm.expect(jsonData[0].name).to.eql(\"Leanne Graham\");\r",
+									"    \r",
+									"});\r",
+									"\r",
+									"pm.test(\"Expected Latitude of ID: 1 is -37.3159\", function(){\r",
+									"    pm.expect(jsonData[0].address.geo.lat).to.eql(\"-37.3159\")\r",
+									"});\r",
+									"\r",
+									"\r",
+									"console.log(jsonData.headers)\r",
+									"pm.test(\"Expected Header Cache-Control as max-age=43200\", function(){\r",
+									"    //pm.expect(jsonData.address.geo.lat).to.eql(\"-37.3159\")\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status code name has string - OK\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/users",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"users"
+							]
+						},
+						"description": "JPH - USERS"
+					},
+					"response": []
+				},
+				{
+					"name": "Get User 100 - Verifying Status Code",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/users/100",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"users",
+								"100"
+							]
+						},
+						"description": "https://jsonplaceholder.typicode.com/users/100"
+					},
+					"response": []
+				},
+				{
+					"name": "GET USER BY ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/users/1",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"users",
+								"1"
+							]
+						},
+						"description": "https://jsonplaceholder.typicode.com/users/1"
+					},
+					"response": []
+				},
+				{
+					"name": "GET USER BY ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/users/2",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"users",
+								"2"
+							]
+						},
+						"description": "https://jsonplaceholder.typicode.com/users/2"
+					},
+					"response": []
+				},
+				{
+					"name": "GET USER BY ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/users/10",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"users",
+								"10"
+							]
+						},
+						"description": "https://jsonplaceholder.typicode.com/users/10"
+					},
+					"response": []
+				},
+				{
+					"name": "GET POSTS",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ee81c665-b289-4328-962c-a5931728711e",
+								"exec": [
+									"let jsonData = pm.response.json();\r",
+									"console.log(jsonData[0].title);\r",
+									"//console.log(jsonData[0].address.street);\r",
+									"pm.test(\"Expected sunt aut facere repellat provident occaecati excepturi optio reprehenderit as Title for ID: 1  \", function () {\r",
+									"    pm.expect(jsonData[0].title).to.eql(\"sunt aut facere repellat provident occaecati excepturi optio reprehenderit\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET POSTS BY ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "83f48550-2296-4628-8782-e5abec683d6d",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Verify JSON Values\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"body\");\r",
+									"    pm.expect(pm.response.text()).to.include(\"id\");\r",
+									"    pm.expect(pm.response.text()).to.include(\"title\");\r",
+									"    pm.expect(pm.response.text()).to.include(\"userId\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Expected qui est esse as Title for ID-2  \", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.title).to.eql(\"qui est esse\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts/{{id}}",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create POST",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "b06534af-9e3c-4d6e-ad21-979aa3ac09f2",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"foo\",\r\n    \"body\": \"bar\",\r\n    \"userId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create POST with Prerequest Script",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "b06534af-9e3c-4d6e-ad21-979aa3ac09f2",
+								"exec": [
+									"let date = Date.now()\r",
+									"console.log(date)\r",
+									"pm.globals.set(\"CurrentDate\", date);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "61c68383-2a99-4c1a-93d4-ddce7e95ce76",
+								"exec": [
+									"let jsonData = pm.response.json();\r",
+									"console.log(jsonData)\r",
+									"\r",
+									"pm.test(\"Expected Json Data\", function () {\r",
+									"    pm.expect(jsonData.title).to.eql(\"foo\");\r",
+									"    pm.expect(jsonData.body).to.eql(\"bar\");\r",
+									"    // pm.expect(jsonData.CurrentDate).to.eql(1596015707769);\r",
+									"    // pm.globals.get(\"CurrentDate\");    \r",
+									"    pm.expect(jsonData.CurrentDate).to.eql(pm.globals.get(\"CurrentDate\"));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"foo\",\r\n    \"body\": \"bar\",\r\n    \"userId\": 1,\r\n    \"CurrentDate\": {{CurrentDate}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Request- POSTS",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "11fc27f2-5fe7-464a-882f-16928242cb30",
+								"exec": [
+									"let date = Date.now()\r",
+									"console.log(date)\r",
+									"pm.globals.set(\"CurrentDate\", date); //This will set global variable - CurrentDate\r",
+									"\r",
+									"//Set Global Variables: name and email with values.\r",
+									"pm.globals.set(\"name\",\"john\");\r",
+									"pm.globals.set(\"email\",\"john_{{CurrentDate}}@example.com\")"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "117d831e-8e69-4c04-8779-7d58c234a829",
+								"exec": [
+									"let jsonData = pm.response.json();\r",
+									"console.log(jsonData);\r",
+									"\r",
+									"console.log(jsonData.CurrentDate)\r",
+									"console.log(typeof jsonData.name);\r",
+									"console.log(typeof jsonData.email);\r",
+									"\r",
+									"pm.test(\"Expected Json Data\", function () {\r",
+									"    pm.expect(jsonData.name).to.eql(\"john\");\r",
+									"    pm.expect(jsonData.email).to.eql(\"john_\"+pm.globals.get(\"CurrentDate\")+\"@example.com\")\r",
+									"    pm.expect(jsonData.CurrentDate).to.eql(pm.globals.get(\"CurrentDate\"));\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"CurrentDate\": {{CurrentDate}},\r\n    \"name\": \"{{name}}\",\r\n    \"email\":\"{{email}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT POSTS",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "300c3c44-9839-4c55-853e-af532dcf21e1",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.eql(\"application/json; charset=utf-8\")\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": 10,\r\n  \"id\": 100,\r\n  \"title\": \"test\",\r\n  \"body\": \"ratione error aut\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts/100",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts",
+								"100"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Basic Auth",
+			"item": [
+				{
+					"name": "Login with Basic Auth",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "postman",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://postman-echo.com/basic-auth",
+							"protocol": "https",
+							"host": [
+								"postman-echo",
+								"com"
+							],
+							"path": [
+								"basic-auth"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Bearer Token Auth",
+			"item": [
+				{
+					"name": "GET Github User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "ee1f0a48134d7a53aa2d51ff8780f7400bdf787b",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.github.com/users/srinivasskc",
+							"protocol": "https",
+							"host": [
+								"api",
+								"github",
+								"com"
+							],
+							"path": [
+								"users",
+								"srinivasskc"
+							]
+						},
+						"description": "https://api.github.com/users/srinivas"
+					},
+					"response": []
+				},
+				{
+					"name": "GET Github Followers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "ee1f0a48134d7a53aa2d51ff8780f7400bdf787b",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.github.com/users/srinivasskc/followers",
+							"protocol": "https",
+							"host": [
+								"api",
+								"github",
+								"com"
+							],
+							"path": [
+								"users",
+								"srinivasskc",
+								"followers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Github Repos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.github.com/users/srinivasskc/repos",
+							"protocol": "https",
+							"host": [
+								"api",
+								"github",
+								"com"
+							],
+							"path": [
+								"users",
+								"srinivasskc",
+								"repos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Github Subscriptions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.github.com/users/srinivasskc/subscriptions",
+							"protocol": "https",
+							"host": [
+								"api",
+								"github",
+								"com"
+							],
+							"path": [
+								"users",
+								"srinivasskc",
+								"subscriptions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET another User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.github.com/users/DannyDainton",
+							"protocol": "https",
+							"host": [
+								"api",
+								"github",
+								"com"
+							],
+							"path": [
+								"users",
+								"DannyDainton"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "ee1f0a48134d7a53aa2d51ff8780f7400bdf787b",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "76cda8eb-b835-454c-989f-9ebe3b7851cf",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "0dcb39ec-5279-4daa-8382-d2f0e3df8aa1",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
